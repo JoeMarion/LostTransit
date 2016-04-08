@@ -1,0 +1,36 @@
+!!!
+%html
+%head
+  %title= "#{yield(:title)} | Lost in Transit"
+
+  // Stylesheets
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = stylesheet_link_tag    'navbar', media: 'all', 'data-turbolinks-track' => true
+  = stylesheet_link_tag    'footer', media: 'all', 'data-turbolinks-track' => true
+  = stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track' => true
+  = stylesheet_link_tag 'forum', media: 'all', 'data-turbolinks-track' => true
+
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+  %link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"}/
+%body
+  // root, root-footer, footer id's neccessary for compass sticky-footer mixin
+  #root
+    .flash
+      - flash.each do |message_type, message|
+        %div{class:"alert-#{message_type} alert"}
+          = message
+    .app-errors
+      = render 'shared/error_messages'
+
+    .application-navbar
+      = render 'layouts/navbar'
+
+    #root-footer
+      .wrap
+        = yield
+  #footer
+    .application-footer
+      = render 'layouts/footer'
+
+  = debug(params) if Rails.env.development?

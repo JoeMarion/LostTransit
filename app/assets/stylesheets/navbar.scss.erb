@@ -1,0 +1,83 @@
+@import "normalize-rails";
+@import "compass";
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  global-box-sizing: border-box
+);
+
+@include border-box-sizing;
+
+.application-navbar {
+  @include container(90%);
+  padding-bottom: .5em;
+  .logo {
+    @include span(3.2 no-gutters);
+    background-color: #142E54;
+    color: white;
+    text-align: center;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  .navlinks-container {
+    @include span(9 at 4 last);
+    background-color: black;
+    color: whitesmoke;
+    font-weight: 600;
+    text-align: center;
+    padding-top: .5em;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      color: #4C668C;
+    }
+
+    height: 2em;
+    .link {
+      @include span(2);
+      height: 100%;
+    }
+  }
+  .user-container {
+    @include span(3 last);
+    height: 100%;
+    .login {
+      @include span(1.5 of 3);
+    }
+    .sign-up {
+      @include span(1.5 of 3 last);
+    }
+  }
+  .information-container {
+    @include span(9 at 4);
+    height: 5em;
+    border: 2px solid black;
+    .latest-blog-posts {
+      @include span(4.5 of 9);
+      border-right: 2px solid black;
+      height: 100%;
+    }
+
+    .announcements {
+      @include span(4.5 of 9 last);
+      height: 100%;
+    }
+  }
+  .social-icons {
+    i {
+      color: #142E54;
+      float: right;
+      padding: .4em 1em 0 0;
+    }
+    i:hover {
+      color: #4C668C;
+    }
+  }
+}
