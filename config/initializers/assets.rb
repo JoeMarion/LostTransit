@@ -1,11 +1,8 @@
-# Be sure to restart your server when you modify this file.
 
-# Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
-# Add additional assets to the asset load path
-# Rails.application.config.assets.paths << Emoji.images_path
+# Precompile Images
+Rails.application.config.assets.precompile += ['login-background.jpg', 'home-header.jpg', 'transit-construction.jpg', 'transit-header.png', 'transit-logo.png', 'welcome-transits.png', 'announcement.png']
 
-# Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+# Precompile Stylesheets
+Rails.application.config.assets.precompile += ['devise.scss', 'navbar.scss', 'footer.scss', 'static.scss', 'forum.scss', 'posts.scss', 'posts-new.scss.erb']

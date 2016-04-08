@@ -1,0 +1,46 @@
+@import "normalize-rails";
+@import "compass";
+@import "susy";
+
+
+.header {
+  // Declare header as a container to hold other susy elements
+  @include container;
+  // Set clearfix because of floats used within this container
+  @include clearfix;
+  // Set border to top of header image to match color of logo and footer
+  border-top: 6px solid #142E54;
+  width: 100%;
+  margin-top: -1em;
+
+  // Style image with a max width to be responsive
+  img {
+  float: right;
+  max-width: 100%;
+  }
+}
+
+
+.intro {
+  @include container;
+  @include clearfix;
+  height: 21em;
+  .intro-transits {
+    @include span (2 of 5);
+    padding-top: 5em;
+    img {
+      float: right;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .intro-description {
+    @include span(3 of 5 last);
+    padding: 1em 1.5em;
+    line-height: 1.3;
+  }
+  .intro-welcome {
+    text-align: center;
+    color: #142E54;
+  }
+}
