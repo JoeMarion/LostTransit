@@ -2,6 +2,9 @@
 
 %h1 Sign up
 
+.app-errors
+  = render 'shared/error_messages'
+
 = form_for(@user) do |f|
   .first_name
     = f.label :first_name, autofocus: true

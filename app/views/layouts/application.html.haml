@@ -20,8 +20,6 @@
       - flash.each do |message_type, message|
         %div{class:"alert-#{message_type} alert"}
           = message
-    .app-errors
-      = render 'shared/error_messages'
 
     .application-navbar
       = render 'layouts/navbar'
